@@ -9,6 +9,7 @@ const {loadData} = require("./util/import-mongo/index");
 
 const secondChanceItemsRoutes = require("./routes/secondChanceItemsRoutes")
 const searchRoutes = require("./routes/searchRoutes")
+const authRoutes = require('./routes/authRoutes');
 
 
 const app = express();
@@ -43,7 +44,7 @@ app.use(pinoHttp({ logger }));
 
 // Use Routes
 // authRoutes Step 2: add the authRoutes and to the server by using the app.use() method.
-//{{insert code here}}
+app.use('/api/auth', authRoutes);
 
 // Items API Task 2: add the secondChanceItemsRoutes to the server by using the app.use() method.
 //{{insert code here}}
